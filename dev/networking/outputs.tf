@@ -9,7 +9,7 @@ output "public_subnet_id" {
 
 }
 
-output "public_subnet_id" {
+output "private_subnet_id" {
   description = "This the private subnet ID"
   value       = aws_subnet.net_private_subnet.id
 
