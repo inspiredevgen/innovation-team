@@ -4,5 +4,5 @@ output "ec2_public_ip" {
 }
 
 output "ec2_instance_id" {
-  value = aws_instance.instance_id
+  value = website.ec2_instance_id
 }
