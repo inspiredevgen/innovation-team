@@ -25,6 +25,3 @@ variable "project" {
   default = "WebAPP"
 }
 
-variable "main_vpc_id" {
-  default = aws_vpc.main-vpc.id
-}
