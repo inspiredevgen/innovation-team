@@ -31,10 +31,16 @@ resource "aws_instance" "website" {
   echo "<h1>Hello from InspireDevGen!</h1>" | sudo tee /var/www/html/index.html
   EOF
 
-  provisioner "file" {
-    source      = "./index.html"
-    destination = "/var/www/html/index.html"
-  }
+  # provisioner "file" {
+  #   source      = "./index.html"
+  #   destination = "/var/www/html/index.html"
+  #   connection {
+  #    type        = "ssh"
+  #    user        = "ec2-user"
+  #    private_key = file("~/.ssh/my-key.pem")
+  #    host        = self.public_ip
+  #  }
+  # }
 
   tags = {
     Name = "Web Server"
