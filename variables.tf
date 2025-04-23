@@ -15,11 +15,6 @@ output "sg_ec2_id" {
   value = module.networking.sg_ec2_id
 }
 
-output "instance_id" {
-  description = "ID of EC2 instance"
-  value       = module.compute.ec2_instance_id
-}
-
 output "webserver_public_ip" {
   description = "Public IP of the Web EC2 instance"
   value       = module.compute.ec2_public_ip
