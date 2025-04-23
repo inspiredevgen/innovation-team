@@ -12,6 +12,7 @@ resource "aws_vpc" "main-vpc" {
 resource "aws_subnet" "net_public_subnet" {
   vpc_id     = aws_vpc.main-vpc.id
   cidr_block = var.public_subnet_cidr
+  
   tags = {
     Name = "${var.env}-public-subnet"
   }
