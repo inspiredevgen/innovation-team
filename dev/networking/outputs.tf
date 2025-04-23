@@ -15,5 +15,11 @@ output "private_subnet_id" {
 
 
 output "sg_ec2_id" {
-  value = aws_security_group.sg_ec2_website.id
+  description = "This is the Security group ID"
+  value       = aws_security_group.sg_ec2_website.id
+}
+
+output "sg_rds_id" {
+  description = "ID of the RDS Security Group"
+  value       = aws_security_group.sg_rds_db.id
 }

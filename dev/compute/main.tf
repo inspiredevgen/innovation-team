@@ -10,20 +10,6 @@ data "terraform_remote_state" "networking" {
 }
 
 
-data "aws_subnet" "public_subnet_id" {
-  tags = {
-    Name = "Public Subnet ID"
-  }
-}
-
-data "aws_security_group" "sg_ec2_id" {
-  tags = {
-    Name = "VPC ID"
-  }
-}
-
-
-
 resource "aws_instance" "website" {
   ami           = var.ami_amazon_linux-2
   instance_type = var.website_instance_type
