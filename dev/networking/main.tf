@@ -1,14 +1,14 @@
+## Creating VPC
 resource "aws_vpc" "main-vpc" {
   cidr_block = var.vpc_cidr_block
-
   enable_dns_hostnames = false
   enable_dns_support   = false
-
   tags = {
     Name = "${var.env}-main-vpc"
   }
 }
 
+## Creating Subnets
 resource "aws_subnet" "net_public_subnet" {
   vpc_id     = aws_vpc.main-vpc.id
   cidr_block = var.public_subnet_cidr
