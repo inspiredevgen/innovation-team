@@ -32,7 +32,7 @@ resource "aws_instance" "website" {
   EOF
 
   provisioner "file" {
-    source      = "index.html"
+    source      = "./index.html"
     destination = "/var/www/html/index.html"
   }
 
