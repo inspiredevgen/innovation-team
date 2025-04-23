@@ -30,6 +30,7 @@ resource "aws_instance" "website" {
 
   #subnet_id     = data.terraform_remote_state.networking.outputs.public_subnet_id
   #vpc_security_group_ids = [data.terraform_remote_state.networking.outputs.sg_ec2_id] 
-  subnet_id              = public_subnet_id
-  vpc_security_group_ids = sg_ec2_id
+  subnet_id              = data.aws_subnet.public_subnet_id.id
+  vpc_security_group_ids = [data.aws_security_group.sg_ec2_id.ID]
+
 }
