@@ -12,5 +12,9 @@ output "public_subnet_id" {
 output "private_subnet_id" {
   description = "This the private subnet ID"
   value       = aws_subnet.net_private_subnet.id
+}
 
+
+output "sg_ec2_id" {
+  value = aws_security_group.sg_ec2.id
 }
