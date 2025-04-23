@@ -1,8 +1,8 @@
-module "network" {
+module "networking" {
   source = "./dev/networking"
 }
 
 module "compute" {
-  source     = "./dev/ec2"
+  source     = "./dev/compute"
   depends_on = [module.network]
 }
