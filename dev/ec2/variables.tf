@@ -15,3 +15,13 @@ variable "ami_ubuntu" {
   # Ubuntu Server 24.04 LTS
   default = "ami-08355844f8bc94f55"
 }
+
+variable "public_subnet_id" {
+  default = module.network.private_subnet_id
+
+}
+
+variable "sg_ec2_id" {
+  default = module.network.sg_ec2_id
+
+}
