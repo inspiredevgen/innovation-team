@@ -4,5 +4,5 @@ module "networking" {
 
 module "compute" {
   source     = "./dev/compute"
-  depends_on = [module.network]
+  depends_on = [module.networking]
 }
