@@ -26,5 +26,5 @@ variable "project" {
 }
 
 variable "main_vpc_id" {
-  default = vpc_id
+  default = aws_vpc.main-vpc.id
 }
