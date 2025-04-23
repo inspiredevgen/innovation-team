@@ -1,11 +1,11 @@
 resource "aws_security_group" "sg_ec2" {
-  name = "sg_ec2_vm"
+  name        = "sg_ec2_vm"
   description = "Security Group for the EC2 Instance"
-  vpc_id = ""
+  vpc_id      = ""
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow HTTP from Anywhere"
   }
@@ -27,20 +27,24 @@ resource "aws_security_group" "sg_ec2" {
   }
 
   tags = {
-    Name = "sg_EC2"
+    Name = "SG for EC2 Instance"
   }
 }
 
 resource "aws_security_group" "sg_rds" {
-  name = "sg_rds_db"
+  name        = "sg_rds_db"
   description = "Security Group for the EC2 Instance"
-  vpc_id = ""
+  vpc_id      = ""
 
   ingress {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = []
+    cidr_blocks = [var.public_subnet_cidr]
     description = "Allow HTTPS from Anywhere"
+  }
+
+  tags = {
+    Name = "SG for RDS Instance"
   }
 }
