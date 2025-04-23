@@ -1,15 +1,3 @@
-data "terraform_remote_state" "networking" {
-  backend = "remote"
-
-  config = {
-    organization = "InspireDevGen"
-    workspaces = {
-      name = "innovation-team" 
-    }
-  }
-}
-
-
 resource "aws_instance" "website" {
   ami = var.ami_amazon_linux-2
   instance_type = var.website_instance_type
