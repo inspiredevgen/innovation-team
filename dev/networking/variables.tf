@@ -24,3 +24,7 @@ variable "team" {
 variable "project" {
   default = "WebAPP"
 }
+
+variable "vpc_id" {
+  default = vpc_id
+}
