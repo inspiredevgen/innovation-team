@@ -1,7 +1,7 @@
-resource "aws_security_group" "sg_ec2" {
+resource "aws_security_group" "sg_ec2_website" {
   name        = "sg_ec2_vm"
   description = "Security Group for the EC2 Instance"
-  vpc_id      = ""
+  vpc_id      = var.vpc_id
   ingress {
     from_port   = 80
     to_port     = 80
@@ -31,10 +31,10 @@ resource "aws_security_group" "sg_ec2" {
   }
 }
 
-resource "aws_security_group" "sg_rds" {
+resource "aws_security_group" "sg_rds_db" {
   name        = "sg_rds_db"
   description = "Security Group for the EC2 Instance"
-  vpc_id      = ""
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 3306
