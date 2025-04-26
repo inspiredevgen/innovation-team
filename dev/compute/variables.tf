@@ -1,4 +1,6 @@
-
+variable "env" {
+  default = "dev"
+}
 variable "website_instance_type" {
   default = "t2.micro"
 }
