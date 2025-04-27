@@ -1,8 +1,13 @@
-
+variable "env" {
+  default = "dev"
+}
 variable "website_instance_type" {
   default = "t2.micro"
 }
 
+variable "ec2_count" {
+  default = 1
+}
 variable "ami_amazon_linux-2" {
   default = "ami-08aa102ddc7558752"
 }

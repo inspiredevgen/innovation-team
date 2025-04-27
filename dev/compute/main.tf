@@ -11,9 +11,11 @@ data "terraform_remote_state" "networking" {
 
 
 resource "aws_instance" "website" {
+  count                       = var.ec2_count
   ami                         = var.ami_amazon_linux-2
   instance_type               = var.website_instance_type
   associate_public_ip_address = true
+  key_name                    = aws_key_pair.dev-sshkey
   subnet_id                   = data.terraform_remote_state.networking.outputs.public_subnet_id
   vpc_security_group_ids      = [data.terraform_remote_state.networking.outputs.sg_ec2_id]
 
@@ -52,3 +54,4 @@ resource "aws_eip" "public_ip_website" {
   instance   = aws_instance.website.id
   depends_on = [aws_instance.website]
 }
+
