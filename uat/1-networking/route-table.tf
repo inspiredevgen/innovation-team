@@ -1,5 +1,5 @@
 resource "aws_route_table" "inspire_route_table" {
-  vpc_id = aws_vpc.infra_main_vpc
+  vpc_id = aws_vpc.infra_main_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
