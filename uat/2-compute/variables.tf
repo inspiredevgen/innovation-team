@@ -14,6 +14,30 @@ variable "ssh_key_name" {
   default = "ec2-ssh-key"
 }
 
+variable "ami_ubuntu" {
+  default = ""
+}
+
+variable "ami_amazon_linux" {
+  default = ""
+}
+
+variable "web_tier_machine_type" {
+  default = ""
+}
+
+variable "app_tier_machine_type" {
+  default = ""
+}
+
+variable "web_tier_count" {
+  default = 1
+}
+
+variable "app_tier_count" {
+  default = 1
+}
+
 variable "az_names" {
   type        = list(string)
   description = "Availability Zones Names"
